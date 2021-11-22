@@ -1,4 +1,4 @@
-package com.example.billsplitter
+package com.tdjlabo.billsplitter
 
 import io.flutter.embedding.android.FlutterActivity
 
