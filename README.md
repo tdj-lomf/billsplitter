@@ -6,6 +6,9 @@ An application for splitting bills.
 - This application stores payment information you provide in your device.
 - This application does not send or receive any information via network.
 - This application can share payment information or computation result to other applications such as SNS, e-mail, and so on, only when you use "share button".
+- You can delete payment information you provide by following manipulation.
+  1. Select data you want to delete by checkbox.
+  2. Select "delete selected" shown after long press on screen.
 
 ## Contact
 Any comments or questions are welcomes.  
