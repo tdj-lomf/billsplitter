@@ -1,16 +1,12 @@
-# billsplitter
+# billsplitter <img src="https://github.com/tdj-lomf/billsplitter/blob/master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" alt="icon" width=64 height=64>
+An application for splitting bills.
 
-A new Flutter project.
+## Privacy Policy
+- This application does not collect your personal information except for payment information you provide.
+- This application stores payment information you provide in your device.
+- This application does not send or receive any information via network.
+- This application can share payment information or computation result to other applications such as SNS, e-mail, and so on, only when you use "share button".
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contact
+Any comments or questions are welcomes.  
+Please email to lomfgt@gmail.com
