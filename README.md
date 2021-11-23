@@ -1,4 +1,4 @@
-# billsplitter <img src="https://github.com/tdj-lomf/billsplitter/blob/master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" alt="icon" width=64 height=64>
+# billsplitter <img src="https://github.com/tdj-lomf/billsplitter/blob/master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" alt="icon" width=40 height=40>
 An application for splitting bills.
 
 ## Privacy Policy
