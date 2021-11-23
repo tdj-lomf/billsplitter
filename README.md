@@ -12,11 +12,11 @@ An application for splitting bills.
 
 
 ## How to Use
-<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_1.png" alt="usage1">
-<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_2.png" alt="usage2">
-<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_3.png" alt="usage3">
-<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_4.png" alt="usage4">
-<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_5.png" alt="usage5">
+<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_1.png" alt="usage1" width="50%" height="50%">
+<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_2.png" alt="usage2" width="50%" height="50%">
+<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_3.png" alt="usage3" width="50%" height="50%">
+<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_4.png" alt="usage4" width="50%" height="50%">
+<img src="https://github.com/tdj-lomf/billsplitter/blob/master/lib/assets/use_5.png" alt="usage5" width="50%" height="50%">
 
 
 ## Contact
