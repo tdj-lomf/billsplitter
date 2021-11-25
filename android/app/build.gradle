@@ -33,6 +33,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion 30
+    ndkVersion "24.0.7856742"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -67,6 +68,9 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel = 'SYMBOL_TABLE'
+            }
         }
     }
     //buildTypes {
