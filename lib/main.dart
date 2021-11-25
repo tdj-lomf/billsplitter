@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
     ];
     return MaterialApp(
       title: 'BillSplitter',
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
       home: DefaultTabController(
         length: tabs.length,
         child: Scaffold(
