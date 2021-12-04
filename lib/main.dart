@@ -514,6 +514,18 @@ class _SettlementDataSource extends DataTableSource {
   }
 
   List<_Settlement> _decideSettlement(Map<String, double> differences) {
+    // search matching pair
+    var allSettlements = <_Settlement>[];
+    var matchGroups = _searchMatching(differences);
+    for (var group in matchGroups) {
+      var settlements = _calcSettlement(group);
+      allSettlements.addAll(settlements);
+    }
+    return allSettlements;
+  }
+
+  List<_Settlement> _calcSettlement(Map<String, double> differences) {
+    // calc settlement for each group
     Map<String, double> tmpDiffs = <String, double>{};
     for (String key in differences.keys) {
       tmpDiffs[key] = differences[key] as double;
@@ -536,7 +548,6 @@ class _SettlementDataSource extends DataTableSource {
       if (srcCandidates.isEmpty) {
         break;
       }
-      // search matching pair
       String srcName = "", dstName = "";
       for (var src in srcCandidates.keys) {
         for (var dst in dstCandidates.keys) {
@@ -567,6 +578,71 @@ class _SettlementDataSource extends DataTableSource {
       settlements.add(_Settlement(srcName, dstName, payAmount));
     }
     return settlements;
+  }
+
+  List<Map<String, double>> _searchMatching(Map<String, double> differences) {
+    var tmpDiffs = <String, double>{};
+    for (String key in differences.keys) {
+      tmpDiffs[key] = differences[key] as double;
+    }
+    // search matching brute force
+    var matchGroups = <Map<String, double>>[];
+    int i = 1;
+    while (i <= differences.length) {
+      if (i >= tmpDiffs.length) {
+        matchGroups.add(tmpDiffs);
+        break;
+      }
+      bool deleted = false;
+      var groups = _combination(tmpDiffs.keys.toSet(), i);
+      for (var groupKeys in groups) {
+        double total = 0;
+        for (var key in groupKeys) {
+          total += tmpDiffs[key] as double;
+        }
+        if (total.abs() < 1e-6) {
+          var group = <String, double>{};
+          for (var key in groupKeys) {
+            group[key] = tmpDiffs[key] as double;
+          }
+          matchGroups.add(group);
+          for (var key in groupKeys) {
+            tmpDiffs.remove(key);
+          }
+          deleted = true;
+          break;
+        }
+      }
+      if (!deleted) {
+        i += 1;
+      }
+    }
+    return matchGroups;
+  }
+
+  Set<Set<String>> _product(List<Set<String>> groups, Set<String> keys) {
+    var result = <Set<String>>{};
+    for (var group in groups) {
+      for (var key in keys) {
+        if (group.contains(key)) {
+          continue;
+        }
+        var newGroup = {...group};
+        newGroup.add(key); // no duplication because of set
+        result.add(newGroup);
+      }
+    }
+    return result;
+  }
+
+  Set<Set<String>> _combination(Set<String> keys, int numElement) {
+    var result = <Set<String>>{};
+    var lastSet = [...result];
+    for (int i = 0; i < numElement; ++i) {
+      result = _product(lastSet, keys);
+      lastSet = [...result];
+    }
+    return result;
   }
 
   void deleteAll() {
